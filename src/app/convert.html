@@ -1,0 +1,22 @@
+<h2 class="goTo"><a href="rates">Go to Rates</a></h2>
+<div class="convertContainer" *ngIf="currencies && rates">
+  <span class="convertBox">
+    <h4>Convert from</h4>
+  <select class="form-control" [(ngModel)]="selectedFrom" (change)="calculate()">
+    <option>Choose currency</option>
+    <option *ngFor="let curr of currencies.data">{{curr.name}}</option></select>
+    <input class="form-control inputValue" type="text" [(ngModel)]="inputFrom" (keyup)="calculate()">
+    <label *ngIf="basicFrom" class="basicValue">1 {{keyFrom}} = {{basicFrom}} {{keyTo}}</label>
+  </span>
+  <span><button class="btn btn-primary" (click)="swapCurrencies()">swap</button></span>
+  <span class="convertBox">
+    <h4>Convert to</h4>
+   <select class="form-control" [(ngModel)]="selectedTo" (change)="calculate()">
+     <option>Choose currency</option>
+     <option *ngFor="let curr of currencies.data">{{curr.name}}</option>
+   </select>
+    <input class="form-control inputValue" type="text" [(ngModel)]="inputTo">
+    <label *ngIf="basicTo" class="basicValue">1 {{keyTo}} = {{basicTo}} {{keyFrom}}</label>
+  </span>
+  <i *ngIf="rates.data" class="pull-right">{{rates.data.timestamp}}</i>
+</div>

@@ -1,0 +1,15 @@
+<h2 class="linkToCurrencies"><a href="">Go to Converter</a></h2>
+<table *ngIf="rates" class="table-striped table-bordered table-responsive customTable">
+  <thead>
+  <tr>
+    <td>Currency</td>
+    <td>Value</td>
+  </tr>
+  </thead>
+  <tbody *ngIf="rates.data">
+  <tr *ngFor="let rate of rates.data.rates">
+    <td>{{rate.key}}</td>
+    <td>{{rate.value}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,6 +1,6 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
-describe('my-app App', () => {
+describe('CurrencyAssistant App', () => {
   let page: AppPage;
 
   beforeEach(() => {

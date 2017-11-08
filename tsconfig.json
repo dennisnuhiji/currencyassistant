@@ -4,15 +4,21 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "allowJs": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "types": [
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],
+    "module": "commonjs",
     "lib": [
-      "es2017",
+      "es6",
+      "es2015.promise",
       "dom"
     ]
   }
